@@ -3,9 +3,7 @@ package com.company.homework.bolt;
 import com.company.homework.utils.MapSort;
 import org.apache.storm.task.OutputCollector;
 import org.apache.storm.task.TopologyContext;
-import org.apache.storm.topology.IRichBolt;
 import org.apache.storm.topology.OutputFieldsDeclarer;
-import org.apache.storm.topology.base.BaseBasicBolt;
 import org.apache.storm.topology.base.BaseRichBolt;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
@@ -39,7 +37,7 @@ public class WordCountBolt extends BaseRichBolt {
         //使用工具类MapSort对map进行排序
         counters = MapSort.sortByValue(counters);
 
-        length = counters.keySet().size();
+        length = counters.size();
 
         String word = null;
 
