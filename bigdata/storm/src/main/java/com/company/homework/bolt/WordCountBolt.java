@@ -35,17 +35,12 @@ public class WordCountBolt extends BaseRichBolt {
         }
 
         //我们只取词频最大的前十个
-        int num = 8;
         int length = 0;
 
         //使用工具类MapSort对map进行排序
         counters = MapSort.sortByValue(counters);
 
-        if (num < counters.keySet().size()) {
-            length = num;
-        } else {
-            length = counters.keySet().size();
-        }
+        length = counters.keySet().size();
 
         String word = null;
 
@@ -63,7 +58,6 @@ public class WordCountBolt extends BaseRichBolt {
             count++;
         }
 
-        word = "The first " + num + ": " + word;
         outputCollector.emit(new Values(word));
     }
 

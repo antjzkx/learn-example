@@ -1,7 +1,5 @@
 package com.company.homework.utils;
 
-import scala.Int;
-
 import java.util.*;
 
 public class MapSort {
