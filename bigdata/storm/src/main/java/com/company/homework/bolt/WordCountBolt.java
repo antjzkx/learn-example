@@ -34,7 +34,6 @@ public class WordCountBolt extends BaseRichBolt {
             counters.put(str, c);
         }
 
-        //我们只取词频最大的前十个
         int length = 0;
 
         //使用工具类MapSort对map进行排序
